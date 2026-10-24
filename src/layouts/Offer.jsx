@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Offer = () => {
   return (
     <Container>
-      <Flex className={"mt-10 mb-5"}>
+      <Flex className={"mt-10 mb-5 gap-x-5"}>
         <div>
           <Link to="/shop">
             <img src={AddImage1} alt="add Image" className="w-full" />
