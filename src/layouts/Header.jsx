@@ -5,8 +5,13 @@ import logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import { TextQuote, Search, ShoppingCart } from "lucide-react";
 import User from "../assets/icons/User";
+import { useState } from "react";
 
 const Header = () => {
+  const [show, setShow] = useState(false);
+  function handleShow() {
+    setShow(!show);
+  }
   return (
     <>
       <div className={"py-8 border-b border-[#979797]"}>
@@ -57,10 +62,50 @@ const Header = () => {
         <Container>
           <Flex>
             <div className="flex items-center gap-x-2 w-1/4">
-              <TextQuote />
-              <span className={"text-[#262626] text-[14px] font-dm"}>
+              <TextQuote onClick={handleShow} />
+              <div
+                className={
+                  "text-[#262626] text-[14px] font-dm relative active:block"
+                }
+              >
                 Shop by Category
-              </span>
+                {show && (
+                  <div className="bg-[#262626] w-75 p-5 absolute top-8 -left-8 ">
+                    <ul>
+                      <Link to="/shop">
+                        <li className="py-3 border-b-2 border-[#767676] text-[#979797] font-dm text-[14px] hover:text-[#F5F5F5] duration-300">
+                          Accesories
+                        </li>
+                      </Link>
+                      <Link to="/shop">
+                        <li className="py-3 border-b-2 border-[#767676] text-[#979797] font-dm text-[14px] hover:text-[#F5F5F5] duration-300">
+                          Furniture
+                        </li>
+                      </Link>
+                      <Link to="/shop">
+                        <li className="py-3 border-b border-[#767676] text-[#979797] font-dm text-[14px] hover:text-[#F5F5F5] duration-300">
+                          Electronics
+                        </li>
+                      </Link>
+                      <Link to="/shop">
+                        <li className="py-3 border-b-2 border-[#767676] text-[#979797] font-dm text-[14px] hover:text-[#F5F5F5] duration-300">
+                          Clothes
+                        </li>
+                      </Link>
+                      <Link to="/shop">
+                        <li className="py-3 border-b-2 border-[#767676] text-[#979797] font-dm text-[14px] hover:text-[#F5F5F5] duration-300">
+                          Bags
+                        </li>
+                      </Link>
+                      <Link to="/shop">
+                        <li className="py-3 border-b-2 border-[#767676] text-[#979797] font-dm text-[14px] hover:text-[#F5F5F5] duration-300">
+                          Home appliances
+                        </li>
+                      </Link>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
             <div className="w-1/2 relative">
               <input

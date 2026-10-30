@@ -1,5 +1,11 @@
+import ShopPart from "../layouts/ShopPart";
+
 const Shop = () => {
-  return <div></div>;
+  return (
+    <div>
+      <ShopPart />
+    </div>
+  );
 };
 
 export default Shop;

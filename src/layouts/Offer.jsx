@@ -9,17 +9,17 @@ import { Link } from "react-router-dom";
 const Offer = () => {
   return (
     <Container>
-      <Flex className={"mt-10 mb-5 gap-x-5"}>
+      <Flex className={"mt-10 mb-34 gap-x-5"}>
         <div>
           <Link to="/shop">
             <img src={AddImage1} alt="add Image" className="w-full" />
           </Link>
         </div>
         <div className={"flex flex-col gap-y-8"}>
-          <Link>
+          <Link to="/shop">
             <img src={AddImage2} alt="add image" className="w-ful" />
           </Link>
-          <Link>
+          <Link to="/shop">
             <img src={AddImage3} alt="add image" className="w-full " />
           </Link>
         </div>
